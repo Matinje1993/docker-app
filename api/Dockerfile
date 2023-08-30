@@ -15,6 +15,6 @@ RUN chown -R node:node /usr/app
 
 USER node
 #Exposing the container to run on this port 4000
-EXPOSE 4000
+EXPOSE 8081
 #Command to start the Docker container for the backed server application
 CMD ["npm", "run", "dev"]
