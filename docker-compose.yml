@@ -15,3 +15,16 @@ services:
     volumes:
       # Bind-mounts configuration
       - ./api:/app
+  gateway:
+  # Location to the node.js dockerfile
+    build: 
+      context: ./gateway
+        # Name of the dockerfile
+      dockerfile: Dockerfile
+    container_name: gateway-container
+    ports:
+       # Host port:Container port
+      - '8080:8080'
+    volumes:
+      # Bind-mounts configuration
+      - ./gateway:/app
