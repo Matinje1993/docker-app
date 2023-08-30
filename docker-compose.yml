@@ -7,7 +7,7 @@ services:
     build: 
       context: .
         # Name of the dockerfile
-      dockerfile: gateway/Dockerfile
+      dockerfile: node/Dockerfile
     container_name: gateway-container
     ports:
      # Host port:Container port
