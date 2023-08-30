@@ -5,26 +5,26 @@ services:
   gateway:
   # Location to the node.js dockerfile
     build: 
-      context: ./gateway
+      context: .
         # Name of the dockerfile
-      dockerfile: Dockerfile
+      dockerfile: services/gateway/Dockerfile
     container_name: gateway-container
     ports:
        # Host port:Container port
       - '4000:8080'
     volumes:
-      - ./gateway:/usr/app/gateway
-      - /usr/app/gateway/node_modules
+      - ./services/gateway:/usr/app/services/gateway
+      - /usr/app/services/gateway/node_modules
   api:
   # Location to the node.js dockerfile
     build: 
-      context: ./api
+      context: .
         # Name of the dockerfile
-      dockerfile: Dockerfile
+      dockerfile: services/api/Dockerfile
     container_name: api-container
     ports:
        # Host port:Container port
       - '8081:8083'
     volumes:
-      - ./api:/usr/app/api
-      - /usr/app/api/node_modules
+      - ./services/api:/usr/app/services/api
+      - /usr/app/services/api/node_modules
