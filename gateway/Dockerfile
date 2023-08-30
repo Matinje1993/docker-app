@@ -1,20 +1,16 @@
+# It uses node:18-alpine as the base image for the Node.js application
 FROM node:18-alpine
-
-# Create app directory
+# It installs the nodemon package globally for monitoring and watching the backend Express server
+RUN npm install -g nodemon
+# Creating the working directory named `app`
 WORKDIR /app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
+# Copying all the tools and dependencies in the package.json file to the working directory `app`
+COPY package.json .
+#Installing all the tools and dependencies in the container
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --omit=dev
-
-# Bundle app source
+#Copying all the application source code and files to the working directory `app`
 COPY . .
-
-EXPOSE 8080
-
-CMD [ "node", "server.js" ]
+#Exposing the container to run on this port 4000
+EXPOSE 4000
+#Command to start the Docker container for the backed server application
+CMD ["npm", "run", "dev"]
