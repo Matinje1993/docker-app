@@ -13,8 +13,8 @@ services:
        # Host port:Container port
       - '4000:8080'
     volumes:
-      # Bind-mounts configuration
-      - ./gateway:/app
+      - ./gateway:/usr/app/gateway
+      - /usr/app/gateway/node_modules
   api:
   # Location to the node.js dockerfile
     build: 
@@ -26,5 +26,5 @@ services:
        # Host port:Container port
       - '8081:8083'
     volumes:
-      # Bind-mounts configuration
-      - ./api:/app
+      - ./api:/usr/app/api
+      - /usr/app/api/node_modules
