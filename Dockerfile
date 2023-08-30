@@ -17,7 +17,6 @@ WORKDIR /app
 RUN npm config set loglevel warn \
 # To mitigate issues with npm saturating the network interface we limit the number of concurrent connections
     && npm config set maxsockets 5 \
-    && npm config set only production \
     && npm config set progress false \
     && cd ./api \
     && npm i \
