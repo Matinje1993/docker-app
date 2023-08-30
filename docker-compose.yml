@@ -2,13 +2,13 @@
 version: '3.9'
 services:
   # Add the node-js service
-  front:
+  gateway:
   # Location to the react.js dockerfile
     build: 
       context: .
         # Name of the dockerfile
-      dockerfile: Dockerfile
-    container_name: front-container
+      dockerfile: gateway/Dockerfile
+    container_name: gateway-container
     ports:
      # Host port:Container port
       - '3000:3000'
