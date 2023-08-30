@@ -2,7 +2,7 @@
 version: '3.9'
 services:
   # Add the node-js service
-  gateway:
+  node:
   # Location to the react.js dockerfile
     build: 
       context: .
