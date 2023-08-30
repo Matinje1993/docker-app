@@ -2,19 +2,6 @@
 version: '3.9'
 services:
   # Add the node-js service
-  api:
-  # Location to the node.js dockerfile
-    build: 
-      context: ./api
-        # Name of the dockerfile
-      dockerfile: Dockerfile
-    container_name: api-container
-    ports:
-       # Host port:Container port
-      - '4000:4000'
-    volumes:
-      # Bind-mounts configuration
-      - ./api:/app
   gateway:
   # Location to the node.js dockerfile
     build: 
