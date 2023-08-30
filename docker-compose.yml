@@ -15,14 +15,3 @@ services:
     volumes:
       # Bind-mounts configuration
       - ./node:/app
-  react:
-  # Location to the react.js dockerfile
-    build: 
-      context: ./react-app
-        # Name of the dockerfile
-      dockerfile: Dockerfile
-    container_name: react-container
-    ports:
-     # Host port:Container port
-      - '3000:3000'
-    stdin_open: true
