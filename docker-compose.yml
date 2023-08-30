@@ -15,3 +15,14 @@ services:
     volumes:
       # Bind-mounts configuration
       - ./node:/app
+  front:
+  # Location to the react.js dockerfile
+    build: 
+      context: ./front
+        # Name of the dockerfile
+      dockerfile: Dockerfile
+    container_name: front-container
+    ports:
+     # Host port:Container port
+      - '3000:3000'
+    stdin_open: true
