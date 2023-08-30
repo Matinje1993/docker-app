@@ -5,7 +5,7 @@ services:
   front:
   # Location to the react.js dockerfile
     build: 
-      context: ./front
+      context: .
         # Name of the dockerfile
       dockerfile: Dockerfile
     container_name: front-container
